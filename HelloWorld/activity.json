@@ -1,0 +1,24 @@
+{
+  "name": "HelloWorld",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "concatenates name",
+  "ref": "github.com/git-suraj/flogo",
+  "author": "suraj",
+  "inputs":[
+    {
+      "name": "firstname",
+      "type": "string"
+    },
+    {
+      "name": "lastname",
+      "type": "string"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}
