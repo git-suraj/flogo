@@ -2,6 +2,7 @@
   "name": "mytimertrigger",
   "version": "0.0.1",
   "type": "flogo:trigger",
+  "title":"mytimertrigger",
   "ref": "github.com/git-suraj/flogo/mytimertrigger",
   "description": "trigger description",
   "author": "git-suraj reach.suraj777@gmail.com",
