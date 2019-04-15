@@ -1,0 +1,25 @@
+{
+  "name": "mytimertrigger",
+  "version": "0.0.1",
+  "type": "flogo:trigger",
+  "ref": "github.com/git-suraj/flogo/mytimertrigger",
+  "description": "trigger description",
+  "author": "git-suraj reach.suraj777@gmail.com",
+  "homepage": "https://github.com/git-suraj/flogo/tree/master/mytimertrigger",
+  "settings":[
+  ],
+  "output": [
+    {
+      "name": "output",
+      "type": "string"
+    }
+  ],
+  "handler": {
+    "settings": [
+      {
+        "name": "seconds",
+        "type": "string"
+      }
+    ]
+  }
+}
