@@ -5,6 +5,7 @@
   "description": "concatenates name",
   "ref": "github.com/git-suraj/flogo/HelloWorld",
   "author": "suraj",
+  "homepage": "https://github.com/git-suraj/flogo/tree/master/HelloWorld",
   "inputs":[
     {
       "name": "firstname",
