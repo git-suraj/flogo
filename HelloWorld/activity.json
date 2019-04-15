@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "flogo:activity",
   "description": "concatenates name",
-  "ref": "github.com/git-suraj/flogo",
+  "ref": "github.com/git-suraj/flogo/HelloWorld",
   "author": "suraj",
   "inputs":[
     {
