@@ -1,6 +1,7 @@
 {
-  "name": "HelloWorld",
+  "name": "hello",
   "version": "0.0.1",
+  "title": "hello",
   "type": "flogo:activity",
   "description": "concatenates name",
   "ref": "github.com/git-suraj/flogo/hello",
