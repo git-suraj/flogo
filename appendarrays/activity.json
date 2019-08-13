@@ -6,6 +6,8 @@
   "title": "Append Arrays",
   "description": "append two arrays",
   "homepage":"https://github.com/git-suraj/flogo/tree/master/appendarrays",
+  "settings":[
+  ],
   "input":[
     {
       "name": "array1",
