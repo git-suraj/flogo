@@ -1,7 +1,7 @@
 {
   "name": "tibco-append-arrays-v1",
   "type": "flogo:activity",
-  "ref": "https://github.com/git-suraj/flogo/tree/master/flogo/appendArrays",
+  "ref": "https://github.com/git-suraj/flogo/tree/master/appendArraysV1/activity/appendArraysV1",
   "version": "0.0.1",
   "title": "Append Arrays",
   "description": "append two arrays",
