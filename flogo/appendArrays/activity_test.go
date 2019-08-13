@@ -3,9 +3,10 @@ package counter
 import (
 	"testing"
 
+	"io/ioutil"
+
 	"github.com/TIBCOSoftware/flogo-contrib/action/flow/test"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
-	"io/ioutil"
 )
 
 var activityMetadata *activity.Metadata
@@ -35,7 +36,7 @@ func TestCreate(t *testing.T) {
 	}
 }
 
-func TestIncrement(t *testing.T) {
+func TestStringAppend(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r != nil {
@@ -48,19 +49,21 @@ func TestIncrement(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-	tc.SetInput(ivCounterName, "messages")
-	tc.SetInput(ivIncrement, true)
+	array1 := []string{"a", "b"}
+	array2 := []string{"c", "d"}
+	tc.SetInput("array1", array1)
+	tc.SetInput("array2", array2)
 
 	act.Eval(tc)
 
-	value := tc.GetOutput(ovValue).(int)
+	value := tc.GetOutput("output").([]int)
 
-	if value != 1 {
+	if len(value) != 4 {
 		t.Fail()
 	}
 }
 
-func TestGet(t *testing.T) {
+func TestIntAppend(t *testing.T) {
 
 	defer func() {
 		if r := recover(); r != nil {
@@ -69,55 +72,20 @@ func TestGet(t *testing.T) {
 		}
 	}()
 
-	md := getActivityMetadata()
-
-	counters := map[string]int{
-		"messages": 5,
-	}
-
-	act := &CounterActivity{metadata: md, counters: counters}
-
-	tc := test.NewTestActivityContext(md)
+	act := NewActivity(getActivityMetadata())
+	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-	tc.SetInput(ivCounterName, "messages")
+	array1 := []int{1, 2}
+	array2 := []int{3, 4}
+	tc.SetInput("array1", array1)
+	tc.SetInput("array2", array2)
 
 	act.Eval(tc)
 
-	value := tc.GetOutput(ovValue).(int)
+	value := tc.GetOutput("output").([]string)
 
-	if value != 5 {
-		t.Fail()
-	}
-}
-
-func TestReset(t *testing.T) {
-
-	defer func() {
-		if r := recover(); r != nil {
-			t.Failed()
-			t.Errorf("panic during execution: %v", r)
-		}
-	}()
-
-	md := getActivityMetadata()
-	counters := map[string]int{
-		"messages": 3,
-	}
-
-	act := &CounterActivity{metadata: md, counters: counters}
-
-	tc := test.NewTestActivityContext(md)
-
-	//setup attrs
-	tc.SetInput(ivCounterName, "messages")
-	tc.SetInput(ivReset, true)
-
-	act.Eval(tc)
-
-	value := tc.GetOutput(ovValue).(int)
-
-	if value != 0 {
+	if len(value) != 4 {
 		t.Fail()
 	}
 }
